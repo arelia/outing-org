@@ -27,6 +27,15 @@ places .street {
 	font-style: italic;
 }
 
+places ul ul li {
+	display: inline-block;
+	margin-right: 5px;
+}
+
+/*.attribute + .attribute {
+	margin-right: 5px;
+}*/
+
 form input {
   font-size: 85%;
   padding: .4em;
