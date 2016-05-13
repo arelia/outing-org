@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Belleza);
 
 body {
   font-family: 'myriad pro', sans-serif;
@@ -5,10 +6,25 @@ body {
   border: 0;
 }
 
+h2 {
+	font-family: 'Belleza';
+	text-transform: uppercase;
+}
+
 places {
   display: block;
   max-width: 400px;
   margin: 5% auto;
+}
+
+places img {
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+}
+
+places .street {
+	font-style: italic;
 }
 
 form input {

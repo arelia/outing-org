@@ -9,6 +9,9 @@
 
   <body>
 
+		<h1>Team Outing Organizer</h1>
+		<h2>Where do we want to go today?</h2>
+
     <places></places>
 
     <script src="tags/places.tag" type="riot/tag"></script>
@@ -16,16 +19,16 @@
 
     <script>
     riot.mount('places', {
-      title: 'I want to behave!',
       items: [
-        { title: 'Avoid excessive caffeine', done: true },
-        { title: 'Hidden item',  hidden: true },
-        { title: 'Be less provocative'  },
-        { title: 'Be nice to people' }
+        { name: 'Roof on theWit', cross_street: 'State & Lake', price_point: 3, attributes: ['rooftop bar', 'bottle service'], image: 'http://www.inetours.com/Chicago/images/rooftop/Roof-Wit_4101.jpg' },
+        { name: 'Cindy\'s at the Chicago Athletic Club', cross_street: 'Michigan & Madison', price_point: 3 , attributes: ['rooftop bar', 'accepts Apple Pay', 'close to Shake Shack'], image: 'http://static1.squarespace.com/static/551aba82e4b06ddeea1f4958/t/56c5342d356fb0f6e03fa3df/1455764532152/20150505_caa_cindys2-v2.jpg' },
+        { name: 'Rivers', cross_street: 'Washington & Wacker', price_point: 2, attributes: ['river views', 'people in suits'], image: 'https://wwcdn.weddingwire.com/vendor/595001_600000/599211/thumbnails/600x600_1379349247925-looking-out.jpg' }
       ]
     })
     </script>
 
   </body>
+
+<!-- TODO pull in Yelp reviews -->
 
 </html>
