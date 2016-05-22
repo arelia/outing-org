@@ -3,12 +3,12 @@
   <ul>
     <li each={ items.filter(whatShow) }>
       <label class={ completed: done }>
-        <input type="checkbox" checked={ done } onclick={ parent.toggle }> { name } { price_point }
+        <input type="checkbox" checked={ done } onclick={ parent.toggle }> { venue } { price_point }
       </label>
       <img src="{ image }" alt="" />
       <p>
         <span class="street">{ cross_street }</span> <br>
-        <ul>
+        <ul class="attributes">
           <li each={ attribute, index in attributes }>{ attribute }</li>
         </ul>
       </p>
@@ -16,8 +16,25 @@
   </ul>
 
   <form onsubmit={ add }>
-    <input name="input" onkeyup={ edit }>
-    <button disabled={ !text }>Add #{ items.filter(whatShow).length + 1 }</button>
+
+    <label for="venue"> Venue Name:
+      <input type="text" name="venue" required></label>
+
+    <label for="name"> Cross Streets:
+      <input type="text" name="street"></label>
+
+    <label for="name"> Price Point:
+      <input type="number" name="price"></label>
+
+    <label for="name"> Attributes:
+      <input type="text" name="attr_list"></label>
+
+    <label for="name"> Image:
+      <input type="url" name="image"></label>
+
+    <input type="submit" name="submit" value="Add It!">
+
+    <button disabled={ !name }>Add #{ items.filter(whatShow).length + 1 }</button>
 
     <button disabled={ items.filter(onlyDone).length == 0 } onclick={ removeAllDone }>
     X{ items.filter(onlyDone).length } </button>
@@ -27,16 +44,36 @@
   <script>
     this.items = opts.items
 
-    edit(e) {
-      this.text = e.target.value
-    }
+    // edit(e) {
+    //   this.venue = this.venue.value;
+    //   this.street = this.street.value;
+    //   this.price = this.price.value;
+    //   this.attr_list = this.attr_list.value;
+    //   this.image = this.image.value;
+    // }
 
     add(e) {
-      if (this.text) {
-        this.items.push({ title: this.text })
-        this.text = this.input.value = ''
+      var venue = this.venue.value;
+      var street = this.street.value;
+      var price = this.price.value;
+      var attr_list = this.attr_list.value;
+      var image = this.image.value;
+
+      console.log(venue, street, price, attr_list, image);
+      console.log(this.items[0], this.items[1], this.items[2], this.items[3]);
+    this.items.push({
+          venue: venue,
+          cross_streets: street,
+          price_point: price,
+          attributes: attr_list,
+          image: image
+        })
+        // this.input.value = '';
+        // this.input.value = '';
+        // this.input.value = '';
+        // this.input.value = '';
+        // this.input.value = '';
       }
-    }
 
     removeAllDone(e) {
       this.items = this.items.filter(function(item) {

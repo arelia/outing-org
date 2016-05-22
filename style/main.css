@@ -35,6 +35,13 @@ places ul ul li {
 /*.attribute + .attribute {
 	margin-right: 5px;
 }*/
+.attributes li:after {
+  content: ", ";
+}
+
+.attributes li:last-child::after {
+  content: unset;
+}
 
 form input {
   font-size: 85%;
