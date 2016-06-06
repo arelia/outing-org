@@ -81,6 +81,12 @@ li {
   color: #ccc;
 }
 
-label {
+.form-field {
   cursor: pointer;
+  display: block;
+  margin: 5px;
+}
+
+.form-field input {
+  width: 100%;
 }

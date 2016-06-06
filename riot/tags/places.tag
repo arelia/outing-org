@@ -1,7 +1,7 @@
 <places>
 
   <ul>
-    <li each={ items.filter(whatShow) }>
+    <li class="item" each={ items.filter(whatShow) }>
       <label class={ completed: done }>
         <input type="checkbox" checked={ done } onclick={ parent.toggle }> { venue } { price_point }
       </label>
@@ -17,19 +17,19 @@
 
   <form onsubmit={ add }>
 
-    <label for="venue"> Venue Name:
+    <label for="venue" class="form-field"> Venue Name:
       <input type="text" name="venue" required></label>
 
-    <label for="name"> Cross Streets:
+    <label for="street" class="form-field"> Cross Streets:
       <input type="text" name="street"></label>
 
-    <label for="name"> Price Point:
+    <label for="price" class="form-field"> Price Point:
       <input type="number" name="price"></label>
 
-    <label for="name"> Attributes:
+    <label for="attr_list" class="form-field"> Attributes:
       <input type="text" name="attr_list"></label>
 
-    <label for="name"> Image:
+    <label for="image" class="form-field"> Image:
       <input type="url" name="image"></label>
 
     <input type="submit" name="submit" value="Add It!">
