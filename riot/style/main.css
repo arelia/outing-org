@@ -11,30 +11,27 @@ h2 {
 	text-transform: uppercase;
 }
 
-places {
-  display: block;
-  max-width: 400px;
-  margin: 5% auto;
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-places img {
-	border-radius: 50%;
-	width: 200px;
-	height: 200px;
+places {
+  display: block;
+  max-width: 90%;
+  margin: 5% auto;
 }
 
 places .street {
 	font-style: italic;
 }
 
-places ul ul li {
-	display: inline-block;
-	margin-right: 5px;
+.attributes li {
+	display: block;
+  font-size: 75%;
 }
 
-/*.attribute + .attribute {
-	margin-right: 5px;
-}*/
 .attributes li:after {
   content: ", ";
 }
@@ -73,7 +70,6 @@ ul {
 
 li {
   list-style-type: none;
-  padding: .2em 0;
 }
 
 .completed {
@@ -89,4 +85,39 @@ li {
 
 .form-field input {
   width: 100%;
+}
+
+.item {
+  border: 1px solid #777;
+  position: relative;
+  padding-left: 0.5em;
+  margin: 0.5em;
+  min-height: 200px;
+  min-width: 400px;
+}
+
+.item .thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-left: 200px;
+	width: 200px;
+	height: 200px;
+  overflow: hidden;
+}
+
+.thumb img {
+  object-fit: contain;
+  object-position: center;
+}
+
+.item label {
+  margin-bottom: 1em;
+  margin-top: 0.5em;
+  display: block;
+}
+
+.item input[type="checkbox"] {
+  display: block;
+  margin-bottom: 1.5em;
 }

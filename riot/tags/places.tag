@@ -1,16 +1,16 @@
 <places>
 
   <ul>
-    <li class="item" each={ items.filter(whatShow) }>
+    <li class="item group" each={ items.filter(whatShow) }>
+      <div class="thumb">
+        <img src="{ image }" alt="" />
+      </div>
       <label class={ completed: done }>
         <input type="checkbox" checked={ done } onclick={ parent.toggle }> { venue }
       </label>
-      <img src="{ image }" alt="" />
-      <p>
-        <ul class="attributes">
-          <li each={ attribute, index in attributes }>{ attribute }</li>
-        </ul>
-      </p>
+      <ul class="attributes">
+        <li each={ attribute, index in attributes }>{ attribute }</li>
+      </ul>
     </li>
   </ul>
 
