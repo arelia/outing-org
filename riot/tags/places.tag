@@ -49,7 +49,7 @@
       var venue = this.venue.value;
       // var street = this.street.value;
       // var price = this.price.value;
-      var attr_list = this.attr_list.value.split(',');
+      var attr_list = this.attr_list.value;
       var image = this.image.value;
 
       console.log(venue, attr_list, image);
@@ -59,9 +59,9 @@
           attributes: attr_list,
           image: image
         })
-        // this.input.value = '';
-        // this.input.value = '';
-        // this.input.value = '';
+        this.venue.value = '';
+        this.attr_list.value = '';
+        this.image.value = '';
         // this.input.value = '';
         // this.input.value = '';
       }
