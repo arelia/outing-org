@@ -49,7 +49,7 @@
       var venue = this.venue.value;
       // var street = this.street.value;
       // var price = this.price.value;
-      var attr_list = this.attr_list.value;
+      var attr_list = this.attr_list.value.split(',');
       var image = this.image.value;
 
       console.log(venue, attr_list, image);
