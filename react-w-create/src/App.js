@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Idea from './components/Idea';
-import AddIdeaForm from './components/AddIdeaForm';
+import CreateIdeaForm from './components/CreateIdeaForm';
 
 class App extends Component {
   constructor() {
