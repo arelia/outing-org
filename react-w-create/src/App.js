@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Idea from './components/Idea';
+import AddIdeaForm from './components/AddIdeaForm';
 
 class App extends Component {
   constructor() {
@@ -18,6 +19,7 @@ class App extends Component {
         <ul className="list-of-ideas">
           <Idea />
         </ul>
+        <AddIdeaForm />
       </div>
     );
   }
