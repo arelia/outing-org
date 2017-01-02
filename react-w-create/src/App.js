@@ -6,9 +6,21 @@ class App extends Component {
   constructor() {
     super();
 
+    this.addIdea = this.addIdea.bind(this);
+
     this.state = {
       ideas: {}
     };
+  }
+
+  addIdea(idea) {
+    const ideas = {...this.state.ideas};
+
+    const timestamp = Date.now();
+
+    ideas[`idea-${timestamp}`] = idea;
+
+    this.setState({ideas});
   }
 
   render() {
@@ -19,7 +31,7 @@ class App extends Component {
         <ul className="list-of-ideas">
           <Idea />
         </ul>
-        <AddIdeaForm />
+        <CreateIdeaForm addIdea={this.addIdea}/>
       </div>
     );
   }

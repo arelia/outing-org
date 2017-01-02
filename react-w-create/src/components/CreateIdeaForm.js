@@ -11,26 +11,27 @@ class CreateIdeaForm extends React.Component {
       attr_list: this.attr_list.value,
       image: this.image.value,
     }
-    console.log(idea);
+    this.props.addIdea(idea);
+    this.ideaForm.reset();
   }
   // add createIdea method here
 
   render() {
     return (
-      <form className="add-idea-form" onSubmit={(e) => this.createIdea(e)}>
-        <label for="venue" className="form-field">Venue Name:
+      <form className="add-idea-form" onSubmit={(e) => this.createIdea(e)} ref={(input) => this.ideaForm = input}>
+        <label htmlFor="venue" className="form-field">Venue Name:
           <input type="text" name="venue" required ref={(input) => {this.venue = input}}/>
         </label>
-        <label for="street" className="form-field">Cross Streets:
+        <label htmlFor="street" className="form-field">Cross Streets:
           <input type="text" name="street" ref={(input) => {this.street = input}} />
         </label>
-        <label for="price" className="form-field">Price Point:
+        <label htmlFor="price" className="form-field">Price Point:
           <input name="price" type="number" ref={(input) => {this.price = input}} />
         </label>
-        <label for="attr_list" className="form-field"> Attributes:
+        <label htmlFor="attr_list" className="form-field"> Attributes:
           <input type="text" name="attr_list" ref={(input) => {this.attr_list = input}} />
           </label>
-          <label for="image" className="form-field"> Image:
+          <label htmlFor="image" className="form-field"> Image:
             <input type="url" name="image" ref={(input) => {this.image = input}} />
           </label>
 
