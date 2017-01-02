@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Idea from './components/Idea';
 import CreateIdeaForm from './components/CreateIdeaForm';
+import base from './base';
 
 class App extends Component {
   constructor() {
@@ -11,6 +12,17 @@ class App extends Component {
     this.state = {
       ideas: {}
     };
+  }
+
+  componentWillMount() {
+    this.ref = base.syncState(`/ideas`, {
+      context: this,
+      state: 'ideas'
+    });
+  }
+
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
   }
 
   addIdea(idea) {
