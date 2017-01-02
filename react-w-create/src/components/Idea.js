@@ -2,16 +2,18 @@ import React from 'react';
 
 class Idea extends React.Component {
   render(){
+    const {details} = this.props;
     return(
       <li className="idea">
         <label>
           <input type='checkbox' />
-          Venue Name
+          {details.venue}
         </label>
-        <p>Venue Cost</p>
-        <img alt='alt tag' src='http://www.inetours.com/Chicago/images/rooftop/Roof-Wit_4101.jpg' />
+        <p>{details.street}</p>
+        <p>{details.price}</p>
+        <img alt='alt tag' src={details.image} />
         <ul>
-          <li>Venue Amenities</li>
+          <li>{details.attr_list}</li>
         </ul>
       </li>
     );

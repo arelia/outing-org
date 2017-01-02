@@ -29,7 +29,11 @@ class App extends Component {
         <h1>Outing Organizer</h1>
         <h2>Where do you want to go today?</h2>
         <ul className="list-of-ideas">
-          <Idea />
+          {Object
+            .keys(this.state.ideas)
+            .map(key => <Idea key={key} details={this.state.ideas[key]}/>)
+          }
+
         </ul>
         <CreateIdeaForm addIdea={this.addIdea}/>
       </div>
